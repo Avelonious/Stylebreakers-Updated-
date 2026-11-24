@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://c5cxn5yvquy2w"]
+
+[ext_resource type="Script" uid="uid://msiaroai4thg" path="res://Scripts/hud.gd" id="1_37p78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 30
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnu2s"]
+bg_color = Color(0.627451, 0, 0.2, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 30
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 30
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sweqy"]
+bg_color = Color(0.43904907, 0.43904915, 0.43904895, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 20
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge2aw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.62825394, 0, 0.2021096, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 20
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cps6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dl73t"]
+
+[node name="HUD" type="Control" unique_id=1214999696]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37p78")
+
+[node name="PlayerHealth" type="ProgressBar" parent="." unique_id=760564656]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 550.0
+offset_right = 429.0
+offset_bottom = 590.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqtel")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hnu2s")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerHealth" unique_id=1616356832]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 41.0
+offset_right = 118.0
+offset_bottom = 73.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 23
+text = "Player 1"
+uppercase = true
+
+[node name="Player2Health" type="ProgressBar" parent="." unique_id=1288180956]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 549.0
+offset_right = 1125.0
+offset_bottom = 590.0
+theme_override_colors/font_color = Color(0.9518278, 0.94831795, 0.9462431, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_sweqy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ge2aw")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Player2Health" unique_id=1277805437]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 46.0
+offset_right = 355.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.03529412, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6cps6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dl73t")
+text = "Player 2"
+uppercase = true
+
+[node name="Message" type="Label" parent="." unique_id=1652718957]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 255.0
+offset_right = 776.0
+offset_bottom = 376.0
