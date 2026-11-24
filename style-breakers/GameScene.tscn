@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://p6opaqgyce8"]
+
+[ext_resource type="Script" uid="uid://c6gvit2y2vqd0" path="res://Scripts/game_scene.gd" id="1_b5kf5"]
+[ext_resource type="PackedScene" uid="uid://b0je2jjyx303c" path="res://player.tscn" id="1_eqhe0"]
+[ext_resource type="PackedScene" uid="uid://c5cxn5yvquy2w" path="res://hud.tscn" id="2_i2arf"]
+[ext_resource type="Texture2D" uid="uid://dy68wjmrb0odb" path="res://Assets/dojo_0_back.png" id="3_hvuor"]
+[ext_resource type="Texture2D" uid="uid://bapf7hyqhikwp" path="res://Assets/dojo_2_floor.png" id="5_i2arf"]
+[ext_resource type="PackedScene" uid="uid://w2m58qa80xhu" path="res://player2.tscn" id="6_i2arf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl73t"]
+size = Vector2(1150.5, 143.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnu2s"]
+size = Vector2(19, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya6ht"]
+size = Vector2(19, 664)
+
+[node name="GameScene" type="Node2D" unique_id=1320363448]
+script = ExtResource("1_b5kf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2057254288]
+position = Vector2(577.75, 330.00003)
+scale = Vector2(2.1148894, 2.4296298)
+texture = ExtResource("3_hvuor")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=2135985500]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=705088703]
+position = Vector2(576.5, 323)
+scale = Vector2(2.1011028, 2.3925927)
+texture = ExtResource("5_i2arf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1205989855]
+position = Vector2(578.75, 583)
+shape = SubResource("RectangleShape2D_dl73t")
+
+[node name="LeftBoundary" type="CollisionShape2D" parent="Ground" unique_id=1442716552]
+position = Vector2(-9, 329)
+shape = SubResource("RectangleShape2D_hnu2s")
+
+[node name="RightBoundary" type="CollisionShape2D" parent="Ground" unique_id=1527889545]
+position = Vector2(1162, 322)
+shape = SubResource("RectangleShape2D_ya6ht")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=574913064]
+
+[node name="HUD" parent="UI" unique_id=1214999696 instance=ExtResource("2_i2arf")]
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 9.0
+offset_bottom = -1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=620873753 groups=["players"] instance=ExtResource("1_eqhe0")]
+position = Vector2(-19, 17)
+Jump_action = "p2_jump"
+moveRight = "p2_right"
+moveLeft = "p2_left"
+melee_Action = "p2_melee"
+special_Action = "p2_special"
+
+[node name="Player2" parent="." unique_id=2037332313 groups=["players"] instance=ExtResource("6_i2arf")]
+position = Vector2(1070, 18)

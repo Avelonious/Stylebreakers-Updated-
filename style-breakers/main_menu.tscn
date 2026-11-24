@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c60wprwqb3m5a"]
+
+[ext_resource type="Script" uid="uid://ppdgih3ypfa" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=436515244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1035504017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7267099, 0.25406444, 6.738305e-07, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=916122035]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 482.0
+grow_vertical = 2
+color = Color(6.6420434e-06, 0.54081416, 0.78898966, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1461173247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=299932538]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1162406002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.5411765, 0.7882353, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.25882354, 0.25882354, 1)
+theme_override_colors/font_outline_color = Color(0, 0.5411765, 0.7882353, 1)
+theme_override_font_sizes/font_size = 23
+text = "STYLEBREAKERS"
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1093242116]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.5411765, 0.7882353, 1)
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1004240379]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
